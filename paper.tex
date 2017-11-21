@@ -1,0 +1,149 @@
+% This is sigproc-sp.tex -FILE FOR V2.6SP OF ACM_PROC_ARTICLE-SP.CLS
+% OCTOBER 2002
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V2.6SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.6SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+%
+%  However, both the CopyrightYear (default to 2002) and the ACM Copyright Data
+% (default to X-XXXXX-XX-X/XX/XX) can still be over-ridden by whatever the author
+% inserts into the source .tex file.
+% e.g.
+% \CopyrightYear{2003} will cause 2003 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@acm.org
+%
+% For tracking purposes - this is V2.6SP - OCTOBER 2002
+
+\documentclass{acm_proc_article}
+
+\begin{document}
+%
+% --- Author Metadata here ---
+\conferenceinfo{COMP 9102 Project Report}{2017, CS Dept, HKU}
+%\setpagenumber{50}
+%\CopyrightYear{2002} % Allows default copyright year (2002) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (X-XXXXX-XX-X/XX/XX) to be over-ridden.
+% --- End of Author Metadata ---
+
+\title{Fast and Optimized Graph Computing System}
+%
+% You need the command \numberofauthors to handle the "boxing"
+% and alignment of the authors under the title, and to add
+% a section for authors number 4 through n.
+
+\author{
+Cheng Wang\\
+Department of Computer Science\\
+University of Hong Kong\\
+Pokfulam Road, Hong Kong\\
+\texttt{cheng2@cs.hku.hk}
+\and Jianyu Jiang\\
+Department of Computer Science\\
+University of Hong Kong \\
+Pokfulam Road, Hong Kong \\
+\texttt{jyjiang@cs.hku.hk}
+}
+
+\numberofauthors{2}
+%
+\maketitle
+\begin{abstract}
+This paper presents a novel ....
+\end{abstract}
+
+
+\section{Introduction}
+Here we cite a paper~\cite{paper}.
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+This section is optional; it is a location for you
+to acknowledge grants, funding, editing assistance and
+what have you.  In the present case, for example, the
+authors would like to thank Gerald Murray of ACM for
+his help in codifying this \textit{Author's Guide}
+and the \textbf{.cls} and \textbf{.tex} files that it describes.
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{bib/biblio}  % sigproc-sp-csis8101.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+% \appendix
+% %Appendix A
+% \section{Headings in Appendices}
+% The rules about hierarchical headings discussed above for
+% the body of the article are different in the appendices.
+% In the \textbf{appendix} environment, the command
+% \textbf{section} is used to
+% indicate the start of each Appendix, with alphabetic order
+% designation (i.e. the first is A, the second B, etc.) and
+% a title (if you include one).  So, if you need
+% hierarchical structure
+% \textit{within} an Appendix, start with \textbf{subsection} as the
+% highest level. Here is an outline of the body of this
+% document in Appendix-appropriate form:
+% \subsection{Introduction}
+% \subsection{The Body of the Paper}
+% \subsubsection{Type Changes and  Special Characters}
+% \subsubsection{Math Equations}
+% \paragraph{Inline (In-text) Equations}
+% \paragraph{Display Equations}
+% \subsubsection{Citations}
+% \subsubsection{Tables}
+% \subsubsection{Figures}
+% \subsubsection{Theorem-like Constructs}
+% \subsubsection*{A Caveat for the \TeX\ Expert}
+% \subsection{Conclusions}
+% \subsection{Acknowledgments}
+% \subsection{Additional Authors}
+% This section is inserted by \LaTeX; you do not insert it.
+% You just add the names and information in the
+% \texttt{{\char'134}additionalauthors} command at the start
+% of the document.
+% \subsection{References}
+% Generated by bibtex from your ~.bib file.  Run latex,
+% then bibtex, then latex twice (to resolve references)
+% to create the ~.bbl file.  Insert that ~.bbl file into
+% the .tex source file and comment out
+% the command \texttt{{\char'134}thebibliography}.
+% % This next section command marks the start of
+% % Appendix B, and does not continue the present hierarchy
+% \section{More Help for the Hardy}
+% The acm\_proc\_article-sp document class file itself is chock-full of succinct
+% and helpful comments.  If you consider yourself a moderately
+% experienced to expert user of \LaTeX, you may find reading
+% it useful but please remember not to change it.
+
+% That's all folks!
+\end{document}
