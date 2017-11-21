@@ -64,15 +64,38 @@ Pokfulam Road, Hong Kong \\
 }
 
 \numberofauthors{2}
-%
+
+\newcommand{\eg}[0]{e.g.,}
+
 \maketitle
 \begin{abstract}
-This paper presents a novel ....
+With the growing numbers of data, people desire a fast and scalable framework
+for computations on them. However, general purpose computation
+frameworks (\eg{} Spark~\cite{nsdi12:spark}, MapReduce~\cite{mapreduce})
+are not suitable for graph computation algorithms such as PageRank and
+ConnectedComponent. Theses frameworks generally generate prohibited amounts
+of network traffic, so they are not scalable to datasets with billions or
+even trillion number of records.
+
+This paper revisits several graph computing systems and summarizes the similarity
+and advantages of them. We also analyze how these systems make the efforts to
+make computation scalable. We have done extensive evaluations on several graph
+computing framework such as PowerGraph, Spark GraphX and ...
 \end{abstract}
 
 
 \section{Introduction}
-Here we cite a paper~\cite{paper}.
+General big-data computing framework (\eg{} Spark, MapReduce) provides
+flexible and efficient programming primitives for most algorithms.
+These frameworks split data into multiple partitions and run tasks on
+these task independently. When necessary, shuffles happen to resolve data
+dependencies.
+However, these framework can result in a great amount of network traffic
+for graph computing algorithms such as PageRank. Even worse, most realistic graphs
+follows the power law, so joining two nodes may incur a one-to-all communications.
+
+To tackle this problem, specified graph computing framework such as Pregel~\cite{sigmod10:pregel},
+GraphLab~\cite{graphlab}, PowerGraph~\cite{powergraph} and GraphX~\cite{graphx}.
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
