@@ -1,4 +1,31 @@
 \section{Graph Computing System}
 \subsection{Computation Abstraction}
+The computation abstraction is the core of a graph computing system. The
+most popular computation abstraction is BSP model and GAS model.
+
+\subsubsection{Bulk Synchronous Parallel Model}
+The BSP model assumes that computation is done on multiple steps. A bulk contains
+some subset of data, and a computation is done on these subset of data. After
+computations, the output is used for synchronization.
+
+For graph computing, Pregel makes the BSP model more specific.
+Each vertex has two states: active and inactive, and computation
+will only be conducted on active vertices. \fig{state} shows the
+state machine of a vertex. Computations are done on multiple
+supersteps. In the first superstep, all vertices is active and they
+will vote to halt and convert to inactive. A vertex will be activate
+when a message for the vertex is received.
+
+In each superstep, a vertex get all messages sent to it and computes
+result according to the current state of the vertex and sends messages
+to its neighbors. \fig{bsp} shows the workflow of BSP.
+
+The advantage
+
+
+
+\subsubsection{GAS Model}
+
+
 \subsection{Scheduling}
 \subsection{Partition Scheme}

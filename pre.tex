@@ -1,3 +1,19 @@
 \section{Preliminary}
 We first introduce some definition of graph computing.
-Suppose there is a  
+Suppose there is a graph G = (V, E), $V$ and $E$ the vertex
+and edges of the graph. Each vertex contains a state set $(s_1, s_2, ..., s_n)$,
+and a set of neighboring vertices $v_{x1}, v_{x2}, ..., v{xn}$.
+Each edge contains a state set (including the weight of edges) of
+$(s_1, s_2, ..., s_n, w_i)$.
+
+Initially, the graph G is stored in a database or files of HDFS. The system
+first \textbf{load} data from storages. Each worker loads a subset of vertices
+and edges of the graph G into memory according to the \textbf{partition scheme}
+and initializes the values.
+Then, each worker conducts iterative computations to
+produce an output from vertex and edge values
+according to the computing models. The output is used for updating
+values in the second phase of computations. After that, the updated values
+will be used in the new iteration.
+When the computation converges, the system stops and the state of the graph
+will be output to persistent storages.

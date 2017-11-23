@@ -1,7 +1,7 @@
 
 all: paper.pdf
 
-paper.pdf: paper.tex
+paper.pdf: *.tex
 		pdflatex paper.tex > paper.log
 		bibtex paper > paper.log
 		pdflatex paper.tex paper.bbl > paper.log
