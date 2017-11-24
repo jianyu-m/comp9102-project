@@ -2,6 +2,17 @@
 \subsection{Computation Abstraction}
 The computation abstraction is the core of a graph computing system. The
 most popular computation abstraction is BSP model and GAS model.
+The advantage of graph computing systems lies in flexibility and performance.
+
+For flexibility, the system should be able to compute on various
+graph, even the topology of graph may be changing along with time.
+Traditional MapReduce framework computes data in functional-like
+APIs, and stateful computations are hard in practice. TODO.
+
+For performance, as graph computing generally generate a tremendous
+amount of network traffics for some operations,
+it is highly desirable to reduce it. MapReduce framework 
+
 
 \subsubsection{Bulk Synchronous Parallel Model}
 The BSP model assumes that computation is done on multiple steps. A bulk contains
@@ -20,7 +31,6 @@ In each superstep, a vertex get all messages sent to it and computes
 result according to the current state of the vertex and sends messages
 to its neighbors. \fig{bsp} shows the workflow of BSP.
 
-The advantage
 
 
 
