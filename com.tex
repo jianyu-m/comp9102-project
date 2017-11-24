@@ -11,7 +11,9 @@ APIs, and stateful computations are hard in practice. TODO.
 
 For performance, as graph computing generally generate a tremendous
 amount of network traffics for some operations,
-it is highly desirable to reduce it. MapReduce framework 
+it is highly desirable to reduce it. MapReduce framework needs to transfer
+all states from previous computation to the next one, which causes high computation
+costs. With graph computing, only a portion of states needs to be transfered.
 
 
 \subsubsection{Bulk Synchronous Parallel Model}
@@ -31,10 +33,22 @@ In each superstep, a vertex get all messages sent to it and computes
 result according to the current state of the vertex and sends messages
 to its neighbors. \fig{bsp} shows the workflow of BSP.
 
-
-
+A Combiner and Aggregator are used for transfering data for message
+passing. The Combiner can combines states in each partitions to reduce
+network traffics. For example, both vertex $b$ and $c$ send a same
+message to vertex $a$, then this message can be combined into one.
+On the other hand, Aggregator is used for aggregating output from multiple
+vertex and even multiple iterations.
 
 \subsubsection{GAS Model}
+Gather, apply and scatter model (GAS) is more restricted than the BSP model.
+Compared with BSP, a vertex in GAS can only interact with neighboring
+vertices.
+
+In \textbf{gather} phase, a vertex gathers information from all adjacent vertices, and
+set a aggregate function for all the gathered information. Then, it \textbf{apply}
+the function and updates values of vertices and edges. At last, in \textbf{scatter},
+it can activate it neighboring vertices with information.
 
 
 \subsection{Scheduling}
