@@ -15,6 +15,14 @@ it is highly desirable to reduce it. MapReduce framework needs to transfer
 all states from previous computation to the next one, which causes high computation
 costs. With graph computing, only a portion of states needs to be transfered.
 
+\subsubsection{MapReduce}
+
+\begin{figure}
+  \center
+  \includegraphics[width=.8\linewidth]{figures/state}
+  \caption{State}
+  \label{state}
+\end{figure}
 
 \subsubsection{Bulk Synchronous Parallel Model}
 The BSP model assumes that computation is done on multiple steps. A bulk contains
@@ -40,6 +48,13 @@ message to vertex $a$, then this message can be combined into one.
 On the other hand, Aggregator is used for aggregating output from multiple
 vertex and even multiple iterations.
 
+\begin{figure}
+  \center
+  \includegraphics[width=.8\linewidth]{figures/gas}
+  \caption{GAS}
+  \label{gas}
+\end{figure}
+
 \subsubsection{GAS Model}
 Gather, apply and scatter model (GAS) is more restricted than the BSP model.
 Compared with BSP, a vertex in GAS can only interact with neighboring
@@ -50,6 +65,53 @@ set a aggregate function for all the gathered information. Then, it \textbf{appl
 the function and updates values of vertices and edges. At last, in \textbf{scatter},
 it can activate it neighboring vertices with information.
 
+Compared with BSP model, a node in GAS only interact with neighboring
+vertices. Although it hurts expresses of computations, it also
+enable multiple optimization techniques. For example, vertices can
+be partitioned and computes in multiple steps (\eg{} using the coring
+algorithm). Therefore,
+messages passing and computation can be done at the same time, which
+greatly improve performance.
+Furthermore, a flexible consistency model can be adopted. For example,
+a $Vertex Consistency$ only guarantees consistency of read-writes
+of vertices. In this cases, races of edges read/writes can happen
+and no locking or synchronization are needed, which improve performance.
 
-\subsection{Scheduling}
+% Also for GraphLab -> asynchronous execution -> scheduling
+% show the graph for consistency and the graph for
+
+\begin{figure}
+  \center
+  \includegraphics[width=.8\linewidth]{figures/edgecut}
+  \caption{Edge Cut}
+  \label{edgecut}
+\end{figure}
+
+\begin{figure}
+  \center
+  \includegraphics[width=.8\linewidth]{figures/vertexcut}
+  \caption{Vertex Cut}
+  \label{vertexcut}
+\end{figure}
+
 \subsection{Partition Scheme}
+The way to partition the graph $G$ can greatly affect performance.
+The simplest way to partition data is by its vertex id or edge id.
+However, this approach incurs too much network traffic. Therefore,
+multiple partition schemes have been proposed including \textbf{Vertex Cut},
+\textbf{Edge Cut} and \textbf{Double Cut}.
+This algorithm is enough for randomly generated
+graphs, but for real-world graphs that follow the
+power law, a 1D partitioner usually leads to considerable
+skewness.\\
+\textbf{Vertex Cut} Vertex cut partition vertices into multiple
+random partitions. \fig{vertexcut} shows the idea of Vertex Cut. \\
+\textbf{Edge Cut} As the Vertex Cut is not suitable for real-life
+graph which follows power law, some work propose to partition
+data based on edges. In Edge Cut, edges are put into multiple
+partitions equally, synchronization of vertices in different nodes
+incurs network communications. \fig{edgecut} shows the idea of
+Edge Cut.
+\textbf{Double Cut}
+For more, PowerLyra use a heristic to combine them.
+Cube proposes a new 3D partition of graph, which consider dimensions of data.
