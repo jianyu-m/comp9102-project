@@ -33,7 +33,9 @@
 %
 % For tracking purposes - this is V2.6SP - OCTOBER 2002
 
-\documentclass{acm_proc_article}
+\documentclass[sigconf]{acmart}
+
+% \documentclass{acm_proc_article}
 
 \newcommand{\eg}[0]{e.g.,}
 
@@ -41,13 +43,13 @@
 \newcommand{\tab}[1]{Table \ref{tab:#1}}
 \newcommand{\chref}[1]{\S\ref{#1}}
 \usepackage{tightenum}
-\usepackage{cite}
+% \usepackage{cite}
 
 
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{COMP 9102 Project Report}{2017, CS Dept, HKU}
+% \conferenceinfo{COMP 9102 Project Report}{2017, CS Dept, HKU}
 %\setpagenumber{50}
 %\CopyrightYear{2002} % Allows default copyright year (2002) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (X-XXXXX-XX-X/XX/XX) to be over-ridden.
@@ -59,22 +61,35 @@
 % and alignment of the authors under the title, and to add
 % a section for authors number 4 through n.
 
-\author{
-Cheng Wang\\
-Department of Computer Science\\
-University of Hong Kong\\
-Pokfulam Road, Hong Kong\\
-\texttt{cheng2@cs.hku.hk}
-\and Jianyu Jiang\\
-Department of Computer Science\\
-University of Hong Kong \\
-Pokfulam Road, Hong Kong \\
-\texttt{jyjiang@cs.hku.hk}
-}
+% \author{
+% Cheng Wang\\
+% Department of Computer Science\\
+% University of Hong Kong\\
+% Pokfulam Road, Hong Kong\\
+% \texttt{cheng2@cs.hku.hk}
+% \and Jianyu Jiang\\
+% Department of Computer Science\\
+% University of Hong Kong \\
+% Pokfulam Road, Hong Kong \\
+% \texttt{jyjiang@cs.hku.hk}
+% }
 
-\numberofauthors{2}
+% \numberofauthors{2}
 
-\maketitle
+\author{Cheng Wang}
+\affiliation{%
+\institution{The University of Hong Kong}
+\city{Hong Kong}
+\country{Hong Kong}}
+\email{cheng2@cs.hku.hk}
+
+\author{Jianyu Jiang}
+\affiliation{%
+\institution{The University of Hong Kong}
+\city{Hong Kong}
+\country{Hong Kong}}
+\email{jyjiang@cs.hku.hk}
+
 \begin{abstract}
 With the growing numbers of data, people desire a fast and scalable framework
 for computations on them. However, general purpose computation
@@ -90,6 +105,7 @@ make computation scalable. We have done extensive evaluations on several graph
 computing framework such as PowerGraph, Spark GraphX and ...
 \end{abstract}
 
+\maketitle
 
 \section{Introduction}
 General big-data computing frameworks (\eg{} Spark, MapReduce) provide

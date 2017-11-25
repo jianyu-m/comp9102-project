@@ -16,6 +16,15 @@ all states from previous computation to the next one, which causes high computat
 costs. With graph computing, only a portion of states needs to be transfered.
 
 \subsubsection{MapReduce}
+MapReduce computes data in map and reduce operations.
+In map, a user-defined function on each data record is executed independently.
+After map, results are shuffled and redistributed into different partitions
+for reduce. In reduce, it read output from previous map and executes
+aggregations for specific subsets of data. MapReduce is a functional
+computation model, so no states are stored across computations.
+Therefore, states of data are stored in data so all states
+in previous computations are necessary
+for computations in next one. \fig{mrmodel} shows the idea of MapReduce.
 
 \begin{figure}
   \center
@@ -99,7 +108,7 @@ The way to partition the graph $G$ can greatly affect performance.
 The simplest way to partition data is by its vertex id or edge id.
 However, this approach incurs too much network traffic. Therefore,
 multiple partition schemes have been proposed including \textbf{Vertex Cut},
-\textbf{Edge Cut} and \textbf{Double Cut}.
+\textbf{Edge Cut} and \textbf{3D Cut}.
 This algorithm is enough for randomly generated
 graphs, but for real-world graphs that follow the
 power law, a 1D partitioner usually leads to considerable
@@ -111,7 +120,26 @@ graph which follows power law, some work propose to partition
 data based on edges. In Edge Cut, edges are put into multiple
 partitions equally, synchronization of vertices in different nodes
 incurs network communications. \fig{edgecut} shows the idea of
-Edge Cut.
-\textbf{Double Cut}
+Edge Cut. \\
+\textbf{3D Cut}
 For more, PowerLyra use a heristic to combine them.
 Cube proposes a new 3D partition of graph, which consider dimensions of data.
+Cube~\cite{cube:osid16} considers the hidden dimensions of vertex partition.
+For Machine Learning and Data Mining (MLDM) algorithms, values of vertex
+may be linked to values of different vertices. Therefore, different value of a vertex
+can be partitioned into different nodes for improved computations. \fig{3dcut}
+shows the idea of 3D Cut. \\
+\textbf{Dynamic Repartitioning}
+Different processes may has imbalance workload, this can hurt performance
+as some processes are waiting for result from others. A Dynamic Repartitioning
+move data from one node to another so that workload is balanced across
+nodes. However, this technique can incur extra network traffics. Moreover,
+performance of this technique is not stable, as workload of nodes in next
+iterations may change, causing imbalance workloads.\\
+\textbf{Mirroring}
+To reduce network traffic, Mirroring creates mirroring vertices (or edges)
+for a cut edge. Therefore, access of neighboring vertices does not
+incur synchronous network messages.
+% TODO we need a comparison for different frameworks job stealling and scheduling
+
+% scheduling or concurrency control
