@@ -15,6 +15,12 @@ it is highly desirable to reduce it. MapReduce framework needs to transfer
 all states from previous computation to the next one, which causes high computation
 costs. With graph computing, only a portion of states needs to be transfered.
 
+\begin{figure}[tbh]
+  \center
+  \includegraphics[width=.8\linewidth]{figures/mrmodel}
+  \caption{MapReduce}
+  \label{fig:mrmodel}
+\end{figure}
 \subsubsection{MapReduce}
 MapReduce computes data in map and reduce operations.
 In map, a user-defined function on each data record is executed independently.
@@ -26,11 +32,11 @@ Therefore, states of data are stored in data so all states
 in previous computations are necessary
 for computations in next one. \fig{mrmodel} shows the idea of MapReduce.
 
-\begin{figure}
+\begin{figure}[tbh]
   \center
   \includegraphics[width=.8\linewidth]{figures/state}
   \caption{State}
-  \label{state}
+  \label{fig:state}
 \end{figure}
 
 \subsubsection{Bulk Synchronous Parallel Model}
@@ -57,11 +63,11 @@ message to vertex $a$, then this message can be combined into one.
 On the other hand, Aggregator is used for aggregating output from multiple
 vertex and even multiple iterations.
 
-\begin{figure}
+\begin{figure}[tbh]
   \center
   \includegraphics[width=.8\linewidth]{figures/gas}
   \caption{GAS}
-  \label{gas}
+  \label{fig:gas}
 \end{figure}
 
 \subsubsection{GAS Model}
@@ -93,14 +99,21 @@ and no locking or synchronization are needed, which improve performance.
   \center
   \includegraphics[width=.8\linewidth]{figures/edgecut}
   \caption{Edge Cut}
-  \label{edgecut}
+  \label{fig:edgecut}
 \end{figure}
 
 \begin{figure}
   \center
   \includegraphics[width=.8\linewidth]{figures/vertexcut}
   \caption{Vertex Cut}
-  \label{vertexcut}
+  \label{fig:vertexcut}
+\end{figure}
+
+\begin{figure}
+  \center
+  \includegraphics[width=.8\linewidth]{figures/3dcut}
+  \caption{3D Cut}
+  \label{fig:3dcut}
 \end{figure}
 
 \subsection{Partition Scheme}

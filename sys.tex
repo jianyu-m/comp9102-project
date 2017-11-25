@@ -1,5 +1,77 @@
 \section{Survey of Existing Systems}
+In this section, we will give a short survey of existing graph computing
+systems. We will explain the techniques adopted in these system and
+show some unique techniques for them.
+
 \subsection{Pregel}
-\subsection{GrabLab / PowerGraph}
+Pregel~\cite{pregel} is a C++ implementation of Google's graph computing system.
+Pregel adopts the BSP computation abstract and uses the simple vertex cut
+partition scheme. A $compute()$ function should be programmed for
+graph computations on a vertex $v$. It accepts the messages from previous
+supersteps and sends messages to next supersteps.
+
+Pregel uses simple vertex cut for graph partition, this is practical
+choice as a vertex in Pregel can send messages to arbitrary vertices
+in a step. Therefore, communication patterns should be known for
+a better partition of graph, which may not be possible in practice.
+Pregel provides abstraction for changing topologies of graph.
+It adopts two mechanisms: partial ordering and handlers, to guarantee
+determinism of computation for changing of graphs.
+
+In practice, a open-sourced implementation of google's Pregel is
+Giraph~\cite{giraph}. It provides multi-threading programming and
+memory optimization to get optimal performance.
+
+\subsection{GraphLab / PowerGraph}
+GraphLab~\cite{graphlab} chooses GAS computation model for graph
+computing. With GAS, GraphLab open several optimizations
+for performances. For example, it can separate computations
+into multiple steps, and computations and message passing
+can be working in the same time.
+
+GraphLab also supports two kinds of execution: asynchronous
+execution and synchronous execution.
+For asynchronous execution, data is committed immediately
+without communications to the neighboring vertices.
+The change of value will only be visible in the next step
+of computation. Although this approach can result in
+inconsistency of data, it greatly improve performances
+for algorithms such as PageRank. These algorithms
+can incur large amounts of network traffics, but
+values in consecutive iterations are really close.
+
+For synchronous execution, it add a barrier in each
+iteration for data exchanges by message passing.
+This barrier guarantee consistency of values across
+iterations, but the barrier can greatly degrade performance.
+
+PowerGraph~\cite{powergraph} is a advance version of GraphLab.
+It adopts vertex cut for graph partition and uses mirroring
+of vertices to reduces network traffics for graph with power
+law distribution. A network message are needed for data consistency of
+vertices across nodes.
+
 \subsection{GraphX}
-\subsection{ChiGraph}
+GraphX~\cite{graphx} is a graph commuting framework based on Spark.
+It introduces two RDD: VertexRDD and EdgeRDD for vertex and edge.
+representations. Although GraphX is based on a general-purpose
+dataflow commuting system, it adopted several optimizations for
+graph computing.
+
+GraphX adopts a Vertex Mirroring, Multicast Join and Incremental
+View Maintenance
+for network traffic optimizations.
+Incremental View Maintenance uses to reduce unnecessary
+move of unchanged data. As reported in the paper~\cite{graphx},
+the performance of GraphX is close to GraphLab, an C++ implementation
+system.
+
+\subsection{GraphChi}
+GraphChi~\cite{graphchi} is a graph computing system on a single machine.
+It adopts Out-of-core computation for reducing accesses of second storages.
+It also uses GAS model and proposes a selective scheduling scheme.
+The selective scheduling scheme prioritizes computation with significant
+values changing. The idea of this technique is that
+most computations are not necessary for convergences of the whole graph,
+most of the graph changes only a little or even does not change at all.
+Therefore, this technique is good for covergence of the whole graph.
