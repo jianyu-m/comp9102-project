@@ -37,11 +37,15 @@
 
 % \documentclass{acm_proc_article}
 
+\setcopyright{none}
+\acmDOI{none}
+
 \newcommand{\eg}[0]{e.g.,}
 
 \newcommand{\fig}[1]{Figure \ref{fig:#1}}
 \newcommand{\tab}[1]{Table \ref{tab:#1}}
 \newcommand{\chref}[1]{\S\ref{#1}}
+\renewcommand{\baselinestretch}{1.2}
 \usepackage{tightenum}
 % \usepackage{cite}
 
@@ -164,13 +168,13 @@ system performance. \chref{con} gives the conclusion of the paper.
 \input{con}
 
 %ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
+% \section{Acknowledgments}
+% This section is optional; it is a location for you
+% to acknowledge grants, funding, editing assistance and
+% what have you.  In the present case, for example, the
+% authors would like to thank Gerald Murray of ACM for
+% his help in codifying this \textit{Author's Guide}
+% and the \textbf{.cls} and \textbf{.tex} files that it describes.
 
 \bibliographystyle{abbrv}
 \bibliography{bib/biblio}  % sigproc-sp-csis8101.bib is the name of the Bibliography in this case

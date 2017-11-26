@@ -5,17 +5,17 @@
 %% The original source files were:
 %%
 %% acmart.dtx  (with options: `class')
-%% 
+%%
 %% IMPORTANT NOTICE:
-%% 
+%%
 %% For the copyright see the source file.
-%% 
+%%
 %% Any modified versions of this file must be renamed
 %% with new filenames distinct from acmart.cls.
-%% 
+%%
 %% For distribution of the original source see the terms
 %% for copying and modification in the file acmart.dtx.
-%% 
+%%
 %% This generated file may be distributed as long as the
 %% original source files, as listed above, are part of the
 %% same distribution. (The sources need not necessarily be
@@ -185,7 +185,7 @@ Computing Machinery]
   \or % acmtog
     \def\ACM@fontsize{9pt}%
   \or % sigconf
-    \def\ACM@fontsize{9pt}%
+    \def\ACM@fontsize{10pt}%
   \or % siggraph
     \def\ACM@fontsize{9pt}%
    \or % sigplan
@@ -1056,8 +1056,7 @@ Computing Machinery]
   \ifx\acmConference@shortname\@empty
     \gdef\acmConference@shortname{#2}%
   \fi}
-\acmConference[Conference'17]{ACM Conference}{July 2017}{Washington,
-  DC, USA}
+\acmConference[COMP9102]{HKU CS Department}{November 2017}{Hong Kong}
 \def\acmBooktitle#1{\gdef\@acmBooktitle{#1}}
 \acmBooktitle{Proceedings of \acmConference@name
        \ifx\acmConference@name\acmConference@shortname\else
@@ -1570,7 +1569,7 @@ Computing Machinery]
     \if@printcopyright
       \copyright\ \@copyrightyear\ \@copyrightowner\\
     \else
-     \@copyrightyear.\
+     % \@copyrightyear.\
     \fi
     \if@ACM@manuscript
       Manuscript submitted to ACM\\
@@ -1595,9 +1594,9 @@ Computing Machinery]
             \ifx\@acmPrice\@empty\else\ \$\@acmPrice\fi\\
             \@formatdoi{\@acmDOI}%
           \else % Conference
-            \ifx\@acmISBN\@empty\else ACM~ISBN~\@acmISBN
-            \ifx\@acmPrice\@empty.\else\dots\$\@acmPrice\fi\\\fi
-            \ifx\@acmDOI\@empty\else\@formatdoi{\@acmDOI}\fi%
+            % \ifx\@acmISBN\@empty\else ACM~ISBN~\@acmISBN
+            % \ifx\@acmPrice\@empty.\else\dots\$\@acmPrice\fi\\\fi
+            % \ifx\@acmDOI\@empty\else\@formatdoi{\@acmDOI}\fi%
           \fi
         \fi
       \fi}

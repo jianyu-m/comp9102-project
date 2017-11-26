@@ -3,3 +3,41 @@ The section shows the evaluation of several graph computing systems:
 GraphX, GraphLab (PowerGraph) and Giraph.
 We conduct the evaluations of these systems in a cluster with 4 machines.
 Each machine is equipped with a Xeon CPU with 24 hyper cores.
+We evaluate PageRank with 2 datasets, the datasets we used are showed in
+\tab{dataset}.
+
+\begin{table}[tbh]
+  \begin{tabular}{l|c|c}
+    \textbf{Dataset Name} & \textbf{Vertex} & \textbf{Edges} \\
+      \hline
+      Youtube Network & 10k & 10m \\
+      \hline
+      Twitter Network & 1k & 1m
+  \end{tabular}
+  \caption{Dataset.}
+  \label{tab:dataset}
+\end{table}
+
+Our evaluations mainly focus on performance of these system and evaluates
+Gigraph, SparkX and PowerGraph.
+Our evaluations mainly answer the following questions:
+\begin{tightenum}
+
+\item[\S\ref{subsec:time}:] How much time needed for each framework
+to converge a PageRank?
+
+\item[\S\ref{subsec:scalability}:] Are these frameworks scalable to
+large graphs or large number of machines?
+
+\item[\S\ref{subsec:technique}:] Are the techniques in each framework
+effective to provide fast computations?
+\end{tightenum}
+
+\subsection{Computation Time} \label{subsec:time}
+
+\subsection{Scalability} \label{subsec:scalability}
+
+\subsection{Technique Effectiveness} \label{subsec:technique}
+
+
+% scalability (nodes and vertices) / time / effectiveness of several technique
