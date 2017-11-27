@@ -104,9 +104,12 @@ of network traffic, so they are not scalable to datasets with billions or
 even trillion number of records.
 
 This paper revisits several graph computing systems and summarizes the similarity
-and advantages of them. We also analyze how these systems make the efforts to
+and advantages of them. We first give a
+brief introduction of some several characteristics of graph computing
+systems and show how all these graph computing system make their design choice.
+We also analyze how these systems make the efforts to
 make computation scalable. We have done extensive evaluations on several graph
-computing framework such as PowerGraph, Spark GraphX and ...
+computing framework such as PowerGraph, Spark GraphX and Gigraph.
 \end{abstract}
 
 \maketitle
@@ -140,7 +143,7 @@ further affect performance. PowerGraph~\cite{powergraph} is a advanced version o
 GraphLab which takes the power law distribution of edges.
 
 We have observed that most graph computing system optimize performance by
-scheduling, new computing abstractions, partition schemes and ...
+scheduling, new computing abstractions and partition schemes.
 
 In this paper, we first analyze the basic components of a graph computing
 system. Then, we give a survey of some popular graph computing system
@@ -149,7 +152,8 @@ how these systems optimize their performance in terms of network traffic,
 computing models and..
 We further evaluate the performance of several graph computing systems
 and analyze their performance.
-Our evaluations show that ...
+Our evaluations show that PowerGraph has the best performance in practice,
+as it has optimized to work for graph with power law distribution.
 
 The structure of this paper is as follows: \chref{pre} gives the definition
 of graph computing system and its computing procedure. \chref{component}

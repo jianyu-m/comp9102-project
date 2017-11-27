@@ -33,11 +33,94 @@ large graphs or large number of machines?
 effective to provide fast computations?
 \end{tightenum}
 
+% two graph (pagerank) two_dataset
 \subsection{Computation Time} \label{subsec:time}
+We first run the PageRank program with two datasets and compare the
+time it takes to converge. \fig{time:a} and \fig{time:b}
+shows the result. We used the asynchronous computation mode
+for PowerGraph.
 
+\begin{figure}
+  \includegraphics[width=.45\textwidth]{figures/time_a}
+  \caption{}
+  \label{fig:time:a}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=.45\textwidth]{figures/time_b}
+  \caption{}
+  \label{fig:time:b}
+\end{figure}
+
+Among two datasets for PageRank, PowerGrapb has the best performance,
+while GraphX is a little bit slower, Gigraph performs the worst.
+PowerGraph is a C++ implementation with asynchronous execution, which
+results in the best performance.
+
+% differential numberof workers - one datasets
+% differential number of graph - one datasets
 \subsection{Scalability} \label{subsec:scalability}
+\subsubsection{Scalability of Workers}
+A good graph computing system should make better use of computing
+resources. Therefore, when the number of computing resources increases,
+the computing time should be shorten.
 
+\begin{figure}
+  \includegraphics[width=.45\textwidth]{figures/scale_worker}
+  \caption{}
+  \label{fig:scale:worker}
+\end{figure}
+
+We run all systems with different numbers of workers using the same dataset,
+and calculate the time for it to converge. \fig{scale:worker}
+shows the result. As the result shows, it takes less time
+when the number of workers increases. However, the time
+does not decrease linearly as it takes much larger costs
+for task scheduling and message transferring.
+
+\subsubsection{Scalability of Datasets}
+In practice, these graph computing system should be able to processing
+graphs with large numbers of vertices and edges. The scale of graph
+in practice is growing, and the graph size is billion and even trillion
+in industrial applications. Therefore, it is highly desirable to
+scale to large graphs.
+
+\begin{figure}
+  \includegraphics[width=.45\textwidth]{figures/scale_dataset}
+  \caption{}
+  \label{}
+\end{figure}
+
+We run all systems with different sizes of datasets using
+the same number of workers. \fig{scale:dataset} shows the time
+for them to converge the result. As the result shows,
+all of these system have good scalability. Some of them increase
+sub-linearly while PowerGraph has the best scalability.
+
+
+% Asyn mode of graphlab / comparism
 \subsection{Technique Effectiveness} \label{subsec:technique}
+In the section, we show the effectiveness of techniques in
+different systems. For the short of time, we only evaluated
+the effectiveness of asynchronous execution in this section.
 
+\begin{table}
+  \begin{tabular}{c|c}
+    \hline
+    \textbf{execution mode} & \textbf{time} \\
+    \hline
+    Synchronous Execution & 10s \\
+    \hline
+    Asynchronous Execution & 6s
+  \end{tabular}
+  \caption{}
+  \label{tab:asyn}
+
+\end{table}
+
+\tab{asyn} shows the result of running with and without asynchronous
+execution. The result shows that it takes less time with asynchronous
+execution. With asynchronous execution, it takes less time for synchronization,
+which results in much better performance.
 
 % scalability (nodes and vertices) / time / effectiveness of several technique
