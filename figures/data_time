@@ -1,9 +1,9 @@
 # applications: PageRank
 # datasets: arabic-2005 (AR), twitter-2010 (TW)
 # number of machines: 16, 32, 64, and 128
-# systems: Giraph and GraphLab (async and sync)
+# systems: Giraph and GraphLab (async)
 
-# Evaluation Metrics: total time (setup time + computation time) and total network usage
+# Evaluation Metrics: total time (setup time + computation time)
 
 # https://github.com/xvz/graph-processing/blob/master/results/plots/data_time.py
 
