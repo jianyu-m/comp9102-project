@@ -33,19 +33,19 @@
 %
 % For tracking purposes - this is V2.6SP - OCTOBER 2002
 
-\documentclass[sigconf]{acmart}
+% \documentclass[sigconf]{acmart}
 
-% \documentclass{acm_proc_article}
+\documentclass{acm_proc_article}
 
-\setcopyright{none}
-\acmDOI{none}
+% \setcopyright{none}
+% \acmDOI{none}
 
 \newcommand{\eg}[0]{e.g.,}
 
 \newcommand{\fig}[1]{Figure \ref{fig:#1}}
 \newcommand{\tab}[1]{Table \ref{tab:#1}}
 \newcommand{\chref}[1]{\S\ref{#1}}
-\renewcommand{\baselinestretch}{1.2}
+% \renewcommand{\baselinestretch}{1.2}
 \usepackage{tightenum}
 % \usepackage{cite}
 
@@ -65,34 +65,36 @@
 % and alignment of the authors under the title, and to add
 % a section for authors number 4 through n.
 
-% \author{
-% Cheng Wang\\
-% Department of Computer Science\\
-% University of Hong Kong\\
-% Pokfulam Road, Hong Kong\\
-% \texttt{cheng2@cs.hku.hk}
-% \and Jianyu Jiang\\
-% Department of Computer Science\\
-% University of Hong Kong \\
-% Pokfulam Road, Hong Kong \\
-% \texttt{jyjiang@cs.hku.hk}
-% }
+\author{
+Cheng Wang\\
+Department of Computer Science\\
+University of Hong Kong\\
+Pokfulam Road, Hong Kong\\
+\texttt{cheng2@cs.hku.hk}
+\and Jianyu Jiang\\
+Department of Computer Science\\
+University of Hong Kong \\
+Pokfulam Road, Hong Kong \\
+\texttt{jyjiang@cs.hku.hk}
+}
 
-% \numberofauthors{2}
+\numberofauthors{2}
 
-\author{Cheng Wang}
-\affiliation{%
-\institution{The University of Hong Kong}
-\city{Hong Kong}
-\country{Hong Kong}}
-\email{cheng2@cs.hku.hk}
+% \author{Cheng Wang}
+% \affiliation{%
+% \institution{The University of Hong Kong}
+% \city{Hong Kong}
+% \country{Hong Kong}}
+% \email{cheng2@cs.hku.hk}
+%
+% \author{Jianyu Jiang}
+% \affiliation{%
+% \institution{The University of Hong Kong}
+% \city{Hong Kong}
+% \country{Hong Kong}}
+% \email{jyjiang@cs.hku.hk}
 
-\author{Jianyu Jiang}
-\affiliation{%
-\institution{The University of Hong Kong}
-\city{Hong Kong}
-\country{Hong Kong}}
-\email{jyjiang@cs.hku.hk}
+\maketitle
 
 \begin{abstract}
 With the growing numbers of data, people desire a fast and scalable framework
@@ -112,7 +114,7 @@ make computation scalable. We have done extensive evaluations on several graph
 computing framework such as PowerGraph, Spark GraphX and Gigraph.
 \end{abstract}
 
-\maketitle
+
 
 \section{Introduction}
 General big-data computing frameworks (\eg{} Spark, MapReduce) provide
