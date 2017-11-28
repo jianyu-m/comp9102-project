@@ -1,0 +1,28 @@
+# applications: PageRank
+# datasets: arabic-2005 (AR), twitter-2010 (TW), uk-2007-05 (UK)
+# number of machines: 16, 32, 64, and 128
+# systems: Giraph and GraphLab (async and sync)
+
+# Evaluation Metrics: total time (setup time + computation time) and total network usage
+
+# https://github.com/xvz/graph-processing/blob/master/results/plots/data_time.py
+
+# giraph, pagerank, twitter
+giraph_0_32_pagerank_twitter_run_avg = 9.47817
+giraph_0_32_pagerank_twitter_io_avg = 1.03919666667
+
+giraph_0_64_pagerank_twitter_run_avg = 5.74949666667
+giraph_0_64_pagerank_twitter_io_avg = 1.07863666667
+
+giraph_0_128_pagerank_twitter_run_avg = 4.98960666667
+giraph_0_128_pagerank_twitter_io_avg = 1.05712666667
+
+# graphlab, pagerank, twitter, async
+graphlab_1_32_pagerank_twitter_run_avg = 13.0673333333
+graphlab_1_32_pagerank_twitter_io_avg = 2.08486666667
+
+graphlab_1_64_pagerank_twitter_run_avg = 13.6796666667
+graphlab_1_64_pagerank_twitter_io_avg = 1.38652333333
+
+graphlab_1_128_pagerank_twitter_run_avg = 12.1913333333
+graphlab_1_128_pagerank_twitter_io_avg = 1.02999
