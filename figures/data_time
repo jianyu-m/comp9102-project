@@ -5,7 +5,8 @@
 
 # Evaluation Metrics: total time (setup time + computation time)
 
-# https://github.com/xvz/graph-processing/blob/master/results/plots/data_time.py
+# paper: http://www.vldb.org/pvldb/vol7/p1047-han.pdf
+# data: https://github.com/xvz/graph-processing/blob/master/results/plots/data_time.py
 
 # giraph, pagerank, twitter
 giraph_0_32_pagerank_twitter_run_avg = 9.47817
