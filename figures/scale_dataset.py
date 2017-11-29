@@ -2,13 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # evenly sampled time at 200ms intervals
-partition = np.array([1, 2, 4, 8, 16, 32], dtype=np.int)
-gupt_error = np.array([18, 32, 55, 79, 61, 64], dtype=np.float)
-naive_error = np.array([18, 33, 55, 79, 62, 64], dtype=np.float)
-combine_error = np.array([16, 16, 40, 84, 63, 64], dtype=np.float)
+partition = np.array([1, 2, 3, 4, 5, 6], dtype=np.int)
+gupt_error = np.array([180, 200, 220, 240, 250, 560], dtype=np.float)
+naive_error = np.array([140, 160, 180, 210, 240, 480], dtype=np.float)
+combine_error = np.array([160, 180, 220, 230, 260, 520], dtype=np.float)
 
+
+# billion / 100 million / 80 million / 60 million / 40 million / 20 mullion
 axes = plt.gca()
-axes.set_ylim([0, 100])
+# axes.set_ylim([0, 100])
 
 # red dashes, blue squares and green triangles
 plt.plot(partition, gupt_error, '*-', label="Gigraph")
