@@ -13,7 +13,7 @@ plt.xticks(range(6), ('20M', '40M', '60M', '80M', '100M', '120M') )
 
 # 130million / 100 million / 80 million / 60 million / 40 million / 20 mullion
 axes = plt.gca()
-# axes.set_ylim([0, 100])
+axes.set_ylim([120, 450])
 
 # red dashes, blue squares and green triangles
 plt.plot(partition, gupt_error, '*-', label="Gigraph")
