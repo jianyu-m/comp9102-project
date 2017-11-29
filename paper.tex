@@ -127,9 +127,9 @@ for graph computing algorithms such as PageRank. Even worse, most realistic grap
 follows the power law, so joining two nodes may incur a one-to-all communications.
 
 To tackle this problem, specified graph computing framework such as
-Pregel~\cite{sigmod10:pregel},
+Pregel~\cite{pregel},
 GraphLab~\cite{graphlab}, PowerGraph~\cite{powergraph}, GraphX~\cite{graphx}
-and ChiGraph~\cite{chigraph}. These graph computing frameworks
+,GraphChi~\cite{graphchi} and so on~\cite{distributed:graphlab,kineograph}. These graph computing frameworks
 adopt a vertex-edge computing model, and computations are modeled
 as vertex and edge updates. For example, Pregel adopts the bulk
 synchronous parallel (BSP) model, so each vertex updates its value according

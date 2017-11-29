@@ -13,7 +13,7 @@ For performance, as graph computing generally generate a tremendous
 amount of network traffics for some operations,
 it is highly desirable to reduce it. MapReduce framework needs to transfer
 all states from previous computation to the next one, which causes high computation
-costs. With graph computing, only a portion of states needs to be transfered.
+costs. With graph computing, only a portion of states needs to be transferred.
 
 \begin{figure}[tbh]
   \center
@@ -22,7 +22,7 @@ costs. With graph computing, only a portion of states needs to be transfered.
   \label{fig:mrmodel}
 \end{figure}
 \subsubsection{MapReduce}
-MapReduce computes data in map and reduce operations.
+MapReduce~\cite{mapreduce} computes data in map and reduce operations.
 In map, a user-defined function on each data record is executed independently.
 After map, results are shuffled and redistributed into different partitions
 for reduce. In reduce, it read output from previous map and executes
@@ -56,7 +56,7 @@ In each superstep, a vertex get all messages sent to it and computes
 result according to the current state of the vertex and sends messages
 to its neighbors. \fig{bsp} shows the workflow of BSP.
 
-A Combiner and Aggregator are used for transfering data for message
+A Combiner and Aggregator are used for transferring data for message
 passing. The Combiner can combines states in each partitions to reduce
 network traffics. For example, both vertex $b$ and $c$ send a same
 message to vertex $a$, then this message can be combined into one.
@@ -129,15 +129,15 @@ skewness.\\
 \textbf{Vertex Cut} Vertex cut partition vertices into multiple
 random partitions. \fig{vertexcut} shows the idea of Vertex Cut. \\
 \textbf{Edge Cut} As the Vertex Cut is not suitable for real-life
-graph which follows power law, some work propose to partition
+graph which follows power law, some work~\cite{xstream} propose to partition
 data based on edges. In Edge Cut, edges are put into multiple
 partitions equally, synchronization of vertices in different nodes
 incurs network communications. \fig{edgecut} shows the idea of
 Edge Cut. \\
 \textbf{3D Cut}
-For more, PowerLyra use a heristic to combine them.
+For more, PowerLyra~\cite{powerlyra} use a heristic to combine them.
 Cube proposes a new 3D partition of graph, which consider dimensions of data.
-Cube~\cite{cube:osid16} considers the hidden dimensions of vertex partition.
+Cube~\cite{cube:osdi16} considers the hidden dimensions of vertex partition.
 For Machine Learning and Data Mining (MLDM) algorithms, values of vertex
 may be linked to values of different vertices. Therefore, different value of a vertex
 can be partitioned into different nodes for improved computations. \fig{3dcut}
