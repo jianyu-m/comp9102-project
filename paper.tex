@@ -99,7 +99,7 @@ Pokfulam Road, Hong Kong \\
 \begin{abstract}
 With the growing numbers of data, people desire a fast and scalable framework
 for computations on them. However, general purpose computation
-frameworks (\eg{} Spark~\cite{nsdi12:spark}, MapReduce~\cite{mapreduce})
+frameworks (\eg{} Spark, MapReduce)
 are not suitable for graph computation algorithms such as PageRank and
 ConnectedComponent. Theses frameworks generally generate prohibited amounts
 of network traffic, so they are not scalable to datasets with billions or
@@ -117,7 +117,7 @@ computing framework such as PowerGraph, Spark GraphX and Gigraph.
 
 
 \section{Introduction}
-General big-data computing frameworks (\eg{} Spark, MapReduce) provide
+General big-data computing frameworks (\eg{} Spark~\cite{spark}, MapReduce~\cite{mapreduce}) provide
 flexible and efficient programming primitives for most algorithms.
 These frameworks split data into multiple partitions and run tasks on
 these task independently. When necessary, shuffles happen to resolve data
@@ -138,20 +138,22 @@ the update algorithm.
 
 However, the BSP model is found to be inefficient as the synchronous update
 mechanism is always necessary for algorithms such as PageRank to
-converge~\cite{graphlab}. Moreover, multiple partition schemes (\eg{} vertex-centric~\cite{sigmod10:pregel},
-edge-centric~\cite{edge} and double partition~\cite{osdi16}). The connectivity
+converge~\cite{graphlab,powergraph}. Moreover, multiple partition schemes (\eg{} vertex-centric~\cite{pregel},
+edge-centric~\cite{xstream} and 3D partition~\cite{cube:osdi16}). The connectivity
 of graph and the partition scheme can greatly affect the communication cost, and
 further affect performance. PowerGraph~\cite{powergraph} is a advanced version of
 GraphLab which takes the power law distribution of edges.
 
 We have observed that most graph computing system optimize performance by
-scheduling, new computing abstractions and partition schemes.
+scheduling, new computing abstractions and partition schemes. The optimizations
+may come from computation locality (\eg{} cpu-memory, data-partition),
+selective scheduling and so on. 
 
 In this paper, we first analyze the basic components of a graph computing
 system. Then, we give a survey of some popular graph computing system
-such as Pregel, GraphLab, PowerGraph, Chigraph, GraphX and so on. We show
+such as Pregel, GraphLab, PowerGraph, GraphChi, GraphX and so on. We show
 how these systems optimize their performance in terms of network traffic,
-computing models and..
+computing models.
 We further evaluate the performance of several graph computing systems
 and analyze their performance.
 Our evaluations show that PowerGraph has the best performance in practice,

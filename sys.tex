@@ -1,4 +1,4 @@
-\section{Survey of Existing Systems}
+\section{Survey of Existing Systems} \label{systems}
 In this section, we will give a short survey of existing graph computing
 systems. We will explain the techniques adopted in these system and
 show some unique techniques for them.
@@ -75,3 +75,20 @@ values changing. The idea of this technique is that
 most computations are not necessary for convergences of the whole graph,
 most of the graph changes only a little or even does not change at all.
 Therefore, this technique is good for convergences of the whole graph.
+
+\subsection{Other Graph Computing system}
+There are many other graph computing systems~\cite{zhang2015numa,gemini, mizan:load, xue2014seraph,miao2015immortalgraph} aiming to improving performance
+of graph computing system. Some work~\cite{big:vldb16,graph:trillions, traversing:graph, facebook:graph}
+aims to scale computations on graph up to trillions of edges.
+In practice, the graph size is up to trillions, so it is emergent to
+handle such a large graph.
+
+Some systems~\cite{naiad,differential:dataflow} propose new dataflow Computing
+models, and it can process graph in streaming style. These systems compute
+data in a iterative way, so difference across iterations can be observed
+for optimizations.
+
+In practice, graph may change with time. Therefore, it is emergent to
+process temporal graph. Several systems~\cite{vaquero2013xdgp,chronos,kineograph,iyer2016time}
+are aimming to tackle this problem.
+They either adopt a adaptive snapshot or propose new computation model.

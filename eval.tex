@@ -1,4 +1,4 @@
-\section{Evaluation}
+\section{Evaluation} \label{eval}
 The section shows the evaluation of several graph computing systems:
 GraphX, GraphLab (PowerGraph) and Giraph.
 We conduct the evaluations of these systems in a cluster with 4 machines.
@@ -7,6 +7,7 @@ We evaluate PageRank with 2 datasets, the datasets we used are showed in
 \tab{dataset}.
 
 \begin{table}[tbh]
+  \center
   \begin{tabular}{l|c|c}
     \textbf{Dataset Name} & \textbf{Vertex} & \textbf{Edges} \\
       \hline
@@ -40,13 +41,13 @@ time it takes to converge. \fig{time:a} and \fig{time:b}
 shows the result. We used the asynchronous computation mode
 for PowerGraph.
 
-\begin{figure}
+\begin{figure}[t]
   \includegraphics[width=.45\textwidth]{figures/time_a}
   \caption{}
   \label{fig:time:a}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[t]
   \includegraphics[width=.45\textwidth]{figures/time_b}
   \caption{}
   \label{fig:time:b}
@@ -65,7 +66,7 @@ A good graph computing system should make better use of computing
 resources. Therefore, when the number of computing resources increases,
 the computing time should be shorten.
 
-\begin{figure}
+\begin{figure}[t]
   \includegraphics[width=.45\textwidth]{figures/scale_worker}
   \caption{}
   \label{fig:scale:worker}
@@ -85,7 +86,7 @@ in practice is growing, and the graph size is billion and even trillion
 in industrial applications. Therefore, it is highly desirable to
 scale to large graphs.
 
-\begin{figure}
+\begin{figure}[t]
   \includegraphics[width=.45\textwidth]{figures/scale_dataset}
   \caption{}
   \label{}
@@ -105,6 +106,7 @@ different systems. For the short of time, we only evaluated
 the effectiveness of asynchronous execution in this section.
 
 \begin{table}
+  \center
   \begin{tabular}{c|c}
     \hline
     \textbf{execution mode} & \textbf{time} \\
