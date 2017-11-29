@@ -1,7 +1,8 @@
 # Benchmark
 
 ## PowerGraph
-** Important note: PowerGraph will download some dependencies while building, however, some of the URLs are broken. You need to fix them in CMakeLists.txt.**
+
+**Important note: PowerGraph will download some dependencies while building, however, some of the URLs are broken. You need to fix them in CMakeLists.txt.**
 
 ### Step 0: Install GraphLab PowerGraph on one of your cluster nodes.
 
@@ -60,7 +61,7 @@ mpiexec -n 2 -hostfile ~/machines /path/to/pagerank --powerlaw=100000
 ```
 
 ## Giraph
-** Important note: the default Hadoop version used by Giraph (1.3.0) is 1.2.1. For simplicity, please install Hadoop 1.2.1 instead of 0.20.203.0-RC1.**
+**Important note: the default Hadoop version used by Giraph (1.3.0) is 1.2.1. For simplicity, please install Hadoop 1.2.1 instead of 0.20.203.0-RC1.**
 
 ### Deploying Hadoop
 Create a dedicated `hadoop` group, a new user account `hduser`, and then add this user account to the newly created group:
