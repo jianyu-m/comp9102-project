@@ -47,19 +47,18 @@
 \newcommand{\chref}[1]{\S\ref{#1}}
 % \renewcommand{\baselinestretch}{1.2}
 \usepackage{tightenum}
-% \usepackage{cite}
-
+\usepackage{hyperref}
 
 \begin{document}
 %
 % --- Author Metadata here ---
-% \conferenceinfo{COMP 9102 Project Report}{2017, CS Dept, HKU}
+\conferenceinfo{COMP 9102 Project Report}{2017, CS Dept, HKU}
 %\setpagenumber{50}
 %\CopyrightYear{2002} % Allows default copyright year (2002) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (X-XXXXX-XX-X/XX/XX) to be over-ridden.
 % --- End of Author Metadata ---
 
-\title{Fast and Optimized Graph Computing System}
+\title{Toward Practical Fast and Graph Computing Systems: \\A Survey on Graph Computing Systems}
 %
 % You need the command \numberofauthors to handle the "boxing"
 % and alignment of the authors under the title, and to add
@@ -147,7 +146,7 @@ GraphLab which takes the power law distribution of edges.
 We have observed that most graph computing system optimize performance by
 scheduling, new computing abstractions and partition schemes. The optimizations
 may come from computation locality (\eg{} cpu-memory, data-partition),
-selective scheduling and so on. 
+selective scheduling and so on.
 
 In this paper, we first analyze the basic components of a graph computing
 system. Then, we give a survey of some popular graph computing system

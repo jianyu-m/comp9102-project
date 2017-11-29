@@ -5,6 +5,17 @@ for analyze the performance gained in each techniques. Understanding
 the effectiveness of each techniques and the design choices
 make us better understand how to design a practical graph computing system.
 
+We have observed that specified graph computing systems make optimizations
+on scheduling, graph partition and caching and computation model.
+Moreover, different datasets and algorithms can greatly affects performances.
+For example, for graph with almost equally connected edges, a simple vertex cut
+can performs well, while showing terrible performance for skewed graph.
+At this scenario, an edge cut approach may be suitable.
+
+When we summarize all these systems, we found that it is hard to get optimized
+performance across all datasets and algorithms. It needs lots of techniques for
+locality, scheduling and so on. It is challenging to design such a system. 
+
 % Data locality
 % Partition of dat
 % scheduling (abstraction)
