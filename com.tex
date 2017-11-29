@@ -35,7 +35,7 @@ for computations in next one. \fig{mrmodel} shows the idea of MapReduce.
 \begin{figure}[tbh]
   \center
   \includegraphics[width=.8\linewidth]{figures/state}
-  \caption{State}
+  \caption{The State Machine for Vertices.}
   \label{fig:state}
 \end{figure}
 
@@ -52,6 +52,13 @@ supersteps. In the first superstep, all vertices is active and they
 will vote to halt and convert to inactive. A vertex will be activate
 when a message for the vertex is received.
 
+\begin{figure}
+  \center
+  \includegraphics[width=.25\textwidth]{figures/bsp}
+  \caption{Bulk Synchronous Parallel (BSP) Model.}
+  \label{fig:bsp}
+\end{figure}
+
 In each superstep, a vertex get all messages sent to it and computes
 result according to the current state of the vertex and sends messages
 to its neighbors. \fig{bsp} shows the workflow of BSP.
@@ -66,11 +73,11 @@ vertex and even multiple iterations.
 \begin{figure}[tbh]
   \center
   \includegraphics[width=.8\linewidth]{figures/gas}
-  \caption{GAS}
+  \caption{Gather, Apply and Scatter (GAS) model.}
   \label{fig:gas}
 \end{figure}
 
-\subsubsection{GAS Model}
+\subsubsection{Gather, Apply and Scatter (GAS) model}
 Gather, apply and scatter model (GAS) is more restricted than the BSP model.
 Compared with BSP, a vertex in GAS can only interact with neighboring
 vertices.
@@ -98,21 +105,21 @@ and no locking or synchronization are needed, which improve performance.
 \begin{figure}
   \center
   \includegraphics[width=.8\linewidth]{figures/edgecut}
-  \caption{Edge Cut}
+  \caption{Edge Cut approach.}
   \label{fig:edgecut}
 \end{figure}
 
 \begin{figure}
   \center
   \includegraphics[width=.8\linewidth]{figures/vertexcut}
-  \caption{Vertex Cut}
+  \caption{Vertex Cut approach.}
   \label{fig:vertexcut}
 \end{figure}
 
 \begin{figure}
   \center
   \includegraphics[width=.8\linewidth]{figures/3dcut}
-  \caption{3D Cut}
+  \caption{3D Cut approach.}
   \label{fig:3dcut}
 \end{figure}
 
